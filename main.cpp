@@ -1,3 +1,8 @@
+/*
+Vytvoreno pomoci informaci a ukazek ze stranky:
+http://www.cs.vsb.cz/grygarek/PS/sockets.html
+*/
+
 #include <stdio.h>
 #include <stdlib.h> 
 #include <unistd.h>
