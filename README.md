@@ -1,6 +1,8 @@
 # POS-message_client_sockets
 POS socket programming task
 
+Vytvoreno pomoci informaci a ukazek ze stranky:
+http://www.cs.vsb.cz/grygarek/PS/sockets.html
 
 Zadání:
 1. TCP klient - odesílání zpráv na server
