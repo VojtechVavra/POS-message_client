@@ -1,4 +1,4 @@
-# POS-message_client
+# POS-message_client_sockets
 POS socket programming task
 
 
