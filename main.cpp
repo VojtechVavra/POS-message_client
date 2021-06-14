@@ -51,37 +51,37 @@ void *tcpClient(void* newArgs)
     printf("First thread\nip: %s, port: %d\n", server.ip, server.port);
 
     int sock = 0, valread; 
-	struct sockaddr_in server_addr; 
-	char msg_buffer[MSG_SIZE] = {0}; 
+    struct sockaddr_in server_addr; 
+    char msg_buffer[MSG_SIZE] = {0}; 
     char server_reply[MSG_SIZE];
     char* host = NULL;
 
     // Create socket
-	if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) 
-	{ 
-		printf("\n Socket creation error - "); 
-		printf("Exitting tcp thread!\n");
+    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) 
+    { 
+        printf("\n Socket creation error - "); 
+        printf("Exitting tcp thread!\n");
         pthread_exit(NULL); 
-	} 
+    } 
 
     puts("client socket created");
 
-	server_addr.sin_family = AF_INET; 
-	server_addr.sin_port = htons(server.port);
+    server_addr.sin_family = AF_INET; 
+    server_addr.sin_port = htons(server.port);
 	
 	// Convert IPv4 and IPv6 addresses from text to binary form into server_addr struct
-	if(inet_pton(AF_INET, server.ip, &server_addr.sin_addr) <= 0) 
-	{ 
-		printf("\nInvalid address/ Address not supported \n"); 
-		pthread_exit(NULL); 
-	} 
+    if(inet_pton(AF_INET, server.ip, &server_addr.sin_addr) <= 0) 
+    { 
+        printf("\nInvalid address/ Address not supported \n"); 
+        pthread_exit(NULL); 
+    } 
 
     // Connect to remote server
-	if (connect(sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) 
-	{ 
-		printf("\nConnection Failed \n"); 
-		pthread_exit(NULL); 
-	}
+    if (connect(sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) 
+    { 
+        printf("\nConnection Failed \n"); 
+        pthread_exit(NULL); 
+    }
     puts("Connected\n");
 
     do {
@@ -100,7 +100,7 @@ void *tcpClient(void* newArgs)
         }
     } while (1);
 
-	close(sock);
+    close(sock);
 
     printf("Exitting tcp thread!\n");
     pthread_exit(NULL);
